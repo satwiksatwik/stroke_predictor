@@ -5,15 +5,35 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Predict Stroke</title>
   <link rel="stylesheet" href="style.css">
+  <script>
+    function predictStroke(event) {
+      event.preventDefault();
+      const age = parseInt(document.getElementById("age").value);
+      const hypertension = document.getElementById("hypertension").value;
+      const heartDisease = document.getElementById("heart_disease").value;
+
+      let result = "Negative";
+      if (age > 60 || hypertension === "Yes" || heartDisease === "Yes") {
+        result = "Positive";
+      }
+
+      const resultDiv = document.getElementById("result");
+      if (result === "Positive") {
+        resultDiv.innerHTML = `<h2>Stroke: Positive</h2><p><strong>Precautions:</strong><ul><li>Visit a doctor immediately</li><li>Regular exercise</li><li>Balanced diet</li></ul></p>`;
+      } else {
+        resultDiv.innerHTML = `<h2>Stroke: Negative</h2><p>Maintain a healthy lifestyle. No immediate risk detected.</p>`;
+      }
+    }
+  </script>
 </head>
 <body class="form-page">
   <div class="form-container">
     <h2>Stroke Risk Prediction</h2>
-    <form action="server/insert.php" method="POST">
+    <form onsubmit="predictStroke(event)">
       <label>Gender: <select name="gender"><option>Male</option><option>Female</option><option>Other</option></select></label>
-      <label>Age: <input type="number" name="age" required></label>
-      <label>Hypertension: <select name="hypertension"><option>No</option><option>Yes</option></select></label>
-      <label>Heart Disease: <select name="heart_disease"><option>No</option><option>Yes</option></select></label>
+      <label>Age: <input type="number" id="age" required></label>
+      <label>Hypertension: <select id="hypertension"><option>No</option><option>Yes</option></select></label>
+      <label>Heart Disease: <select id="heart_disease"><option>No</option><option>Yes</option></select></label>
       <label>Ever Married: <select name="ever_married"><option>Yes</option><option>No</option></select></label>
       <label>Work Type: <select name="work_type"><option>Private</option><option>Self-employed</option><option>Govt_job</option><option>Children</option><option>Never_worked</option></select></label>
       <label>Residence Type: <select name="residence_type"><option>Urban</option><option>Rural</option></select></label>
@@ -23,6 +43,7 @@
       <label>Smoking Status: <select name="smoking_status"><option>never smoked</option><option>formerly smoked</option><option>smokes</option></select></label>
       <input type="submit" class="btn" value="Predict">
     </form>
+    <div id="result"></div>
   </div>
 </body>
 </html>
