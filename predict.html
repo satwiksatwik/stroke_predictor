@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Predict Stroke</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="form-page">
+  <div class="form-container">
+    <h2>Stroke Risk Prediction</h2>
+    <form action="server/insert.php" method="POST">
+      <label>Gender: <select name="gender"><option>Male</option><option>Female</option><option>Other</option></select></label>
+      <label>Age: <input type="number" name="age" required></label>
+      <label>Hypertension: <select name="hypertension"><option>No</option><option>Yes</option></select></label>
+      <label>Heart Disease: <select name="heart_disease"><option>No</option><option>Yes</option></select></label>
+      <label>Ever Married: <select name="ever_married"><option>Yes</option><option>No</option></select></label>
+      <label>Work Type: <select name="work_type"><option>Private</option><option>Self-employed</option><option>Govt_job</option><option>Children</option><option>Never_worked</option></select></label>
+      <label>Residence Type: <select name="residence_type"><option>Urban</option><option>Rural</option></select></label>
+      <label>BMI: <input type="text" name="bmi" required></label>
+      <label>Avg Glucose Level: <input type="text" name="avg_glucose_level" required></label>
+      <label>Cholesterol Level: <select name="cholesterol_level"><option>Low</option><option>Normal</option><option>High</option></select></label>
+      <label>Smoking Status: <select name="smoking_status"><option>never smoked</option><option>formerly smoked</option><option>smokes</option></select></label>
+      <input type="submit" class="btn" value="Predict">
+    </form>
+  </div>
+</body>
+</html>
