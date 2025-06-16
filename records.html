@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Patient Records</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Patient Records</h1>
+    <div id="recordsList"></div>
+    <a href="index.html" class="link-btn">← Back to Prediction</a>
+  </div>
+  <script>
+    const records = JSON.parse(localStorage.getItem("patients") || "[]");
+    const container = document.getElementById("recordsList");
+
+    if (records.length === 0) {
+      container.innerHTML = "<p>No records found.</p>";
+    } else {
+      records.reverse().forEach(rec => {
+        const div = document.createElement("div");
+        div.className = "record";
+        div.innerHTML = `
+          <p><strong>Age:</strong> ${rec.age} | <strong>Gender:</strong> ${rec.gender} | <strong>Result:</strong> ${rec.result}</p>
+          <p><em>${rec.timestamp}</em></p><hr>`;
+        container.appendChild(div);
+      });
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+/* style.css */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to right, #e3f2fd, #f1f8e9);
+  color: #333;
+}
+
+.container {
+  max-width: 600px;
+  margin: 50px auto;
+  background: #fff;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+h1 {
+  text-align: center;
+  color: #0277bd;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 5px;
+  color: #2e7d32;
+}
+
+input, select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #cfd8dc;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+input:focus, select:focus {
+  border-color: #4db6ac;
+  outline: none;
+  background-color: #f1f8e9;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  background-color: #00897b;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background-color: #00695c;
+}
+
+#resultBox {
+  margin-top: 20px;
+  padding: 15px;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 10px;
+}
+
+#resultBox.positive {
+  background-color: #ffebee;
+  color: #c62828;
+  border: 2px solid #ef5350;
+}
+
+#resultBox.negative {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+  border: 2px solid #66bb6a;
+}
+
+.link-btn {
+  display: block;
+  text-align: center;
+  margin-top: 20px;
+  color: #0277bd;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+body {
+  background-image: url('assets/background.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
